@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Reader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ff0000;
+        }
+        #textDisplay {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: purple;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="textDisplay">FUCK YOU</div>
+    <button onclick="readText()">Read Text</button>
+
+    <script>
+        function readText() {
+            const text = document.getElementById('textDisplay').innerText;
+            const utterance = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
+</body>
+</html>
